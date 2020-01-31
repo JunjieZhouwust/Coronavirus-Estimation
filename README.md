@@ -12,8 +12,8 @@ f(n)=f(n-1)+f(n-2) (当前项等于前两项之和)。
 f(n)=f(n-1)+k*f(n-3)-f(n-14) 。
 其中k就是传播系数，我们命名为14天治愈模型，让我们大致令k=0.33到0.36，可以理解为每天大致传染0.33个人，即3天传染1个人。算算看
 
-![Image text](https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image1.png)
-
+# ![Image text](https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image1.png)
+<img src="https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image1.png" width="700" alt="note"/>
 好吓人，如果k=0.36，就能传播17500人。
   不要担心，我们祖国采取了封城模式，1月24号左右，各地限制了人流。我们可以继续改造这个模型，当n>24，传播系数k=0.7*k，每天衰减为原先的0.7倍。这样有了14天封城模型：
   
