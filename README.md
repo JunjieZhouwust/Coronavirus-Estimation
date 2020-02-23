@@ -12,21 +12,25 @@ f(n)=f(n-1)+f(n-2) (当前项等于前两项之和)。
 f(n)=f(n-1)+k*f(n-3)-f(n-14) 。
 其中k就是传播系数，我们命名为14天治愈模型，让我们大致令k=0.33到0.36，可以理解为每天大致传染0.33个人，即3天传染1个人。算算看
 
-<img src="https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image1.png" width="700" alt="note"/>
+![img](./images/image1.png)
 
 好吓人，如果k=0.36，就能传播17500人。
   不要担心，我们祖国采取了封城模式，1月24号左右，各地限制了人流。我们可以继续改造这个模型，当n>24，传播系数k=0.7*k，每天衰减为原先的0.7倍。这样有了14天封城模型：
   
-![Image text](https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image2.png)
+![img](./images/image2.png)
 
 我们对比一下，人数降低了许多不是，所以不要抱怨封城，数据分析告诉我们，此举措能大大降低传播的人数。
 可是，还不对啊，卫健委数据曲线超过了模型曲线包围线。嗯！这一定是传播系数不对，调大一些，改为0.34-0.4，见下图
 
-![Image text](https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image3.png)
+![img](./images/image3.png)
  
 看来封城模型能在传播系数为0.4时，大致有7000人（看趋势这个传播系数还有点危险），但是如果不封城呢，数据就飞了（见14天治愈模型）。
 
 1.0版更新：
 数据已经明显分化，目前分为武汉，外地（湖北除武汉），外省（全国除湖北）（用红绿蓝3个虚线） （1）武汉（采用26日治愈+24号封城模型）（2）外地和外省（采用22日治愈+27号封城模型）。细看，外地与外省两个曲线高度相似，但是外地滞后一个节拍。
 
-![Image text](https://github.com/JunjieZhouwust/Coronavirus-Estimation/tree/master/images/image4.png)
+![img](./images/image4.png)
+
+1.2版本优化
+
+![img](./images/image5.png)
